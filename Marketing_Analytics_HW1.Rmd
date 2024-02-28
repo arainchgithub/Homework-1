@@ -1,0 +1,53 @@
+---
+title: "MA_HW1"
+author: "Eduard Petrosyan"
+date: "2024-02-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+libs<-c('ggplot2','ggpubr','knitr','diffusion')
+load_libraries<-function(libs){
+new_libs <- libs[!(libs %in% installed.packages()[,"Package"])]
+if(length(new_libs)>0) {install.packages(new_libs)}
+lapply(libs, library, character.only = TRUE)
+}
+load_libraries(libs)
+
+```
+For this analytics, I have chosen to focus on athletic footwear producs; more specifically, I have chosen the innovation Adidas 
+Adizero Adios Pro Evo 1. Let's briefly introduce this shoe type. It is demonstrating cutting-edge technologyy in the realm of 
+distance racing and marathons and Ethiopian runner Tigst Assefa's record-breaking performance at the Berlin Marathon, clocking 2:11:53, showcased the effectiveness of the Evo 1. ⁤⁤Weighing 25 percent less than the Nike Vaporfly and featuring a 4.9
+oz. The Evo 1 introduces innovative features, such as a translucent lightweight upper and a super-thin rubber outsole. ⁤⁤A proprietary manufacturing process for the Lightstrike Pro foam further enhances its appeal. ⁤⁤However it has an issue about its cost which is $500, a price higher than the average sport shoes.
+
+
+On the other hand, similar in its target customers, Nike's Vaporfly series, an earlier innovation that in its period revolutionized distance running, have become a subject of interesting discussions. Featuring carbon plates and springy midsole foam, the Vaporfly series has demonstrated a real and substantial advantage, as highlighted by The New York Times analysis. The Zoom Vaporfly 4% and ZoomX Vaporfly Next%, in particular, have set a benchmark, providing runners with a 4 to 5 percent edge over average shoes and a 2 to 3 percent advantage over the next-fastest popular shoe. This notable advantage has not only stirred discussions among professionals and amateurs alike but has also prompted other brands like Brooks, Saucony, New Balance, Hoka One One, and Asics to introduce similar shoes to the market. This historical context sets the stage for analyzing the market dynamics and potential adoption patterns of the Adidas Adizero Adios Pro Evo 1, using some availables statistics of  its Nike counterpart.
+
+```{r, warning=F}
+
+```
+
+At this part of my project, I wanted to approximate the market dynamics of Nike's Vaporfly shoes, 
+because of the inherent difficulty in directly accessing granular data specific to Vaportfly sales. 
+The dataset that is being analyzed represents Nike's worldwide revenue from 2016 to 2021
+within the Running category, which is a pragmatic alternative. When taking the narrow part of
+the data on Running category, where Vaporfly shoes are the primary focus, I could
+understand the insights into their market impact and adoption patterns. 
+
+I wasn't able to obtain detailed revenue figures at the individual shoe model level because of 
+the lack of necessary statistics. To approximate it, I turned to the broader dataset by utilizing the revenue withing the Running category as a reliable proxy for Vaporfly's market presence. In this way, I was able to overcome the limitations in direct data 
+access and use the available data to make assumptions about the unavailable dataset. 
+
+It is important to note, that I used specific source to emphasize, that in my assignment, the data that demonstrated Nike's overall revenue worldwide, is modified to demonstrate Nike specifically shoe revenue using each year's percent share from source. 
+
+
+```{r, warning= F}
+
+```
+
+Sources:
+https://time.com/collection/best-inventions-2023/6324416/adidas-adizero-adios-pro-evo-1/
+https://www.statista.com/statistics/240975/athletic-footwwear-wholesale-sales-in-the-us/
+https://www.nytimes.com/interactive/2019/12/13/upshot/nike-vaporfly-next-percent-shoe-estimates.html
+https://runrepeat.com/nike-shoes-statistics
