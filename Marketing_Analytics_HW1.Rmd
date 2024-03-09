@@ -3,10 +3,9 @@ title: "MA_HW1"
 author: "Eduard Petrosyan"
 date: "2024-02-25"
 output:
-  html_document:
-    df_print: paged
+  word_document: default
   pdf_document:
-    latex_engine: xelatex
+    latex_engine: lualatex
 ---
 
 ```{r setup, include=FALSE, warning= F}
@@ -24,13 +23,13 @@ load_libraries(libs)
 For this analytics, I have chosen to focus on athletic footwear producs; more specifically, I have chosen the innovation Adidas 
 Adizero Adios Pro Evo 1. Let's briefly introduce this shoe type. It is demonstrating cutting-edge technologyy in the realm of 
 distance racing and marathons and Ethiopian runner Tigst Assefa's record-breaking performance at the Berlin Marathon, clocking 2:11:53, showcased the effectiveness of the Evo 1. ⁤⁤Weighing 25 percent less than the Nike Vaporfly and featuring a 4.9
-oz. The Evo 1 introduces innovative features, such as a translucent lightweight upper and a super-thin rubber outsole. ⁤⁤A proprietary manufacturing process for the Lightstrike Pro foam further enhances its appeal. ⁤⁤However it has an issue about its cost which is $500, a price higher than the average sport shoes.
+oz. The Evo 1 introduces innovative features, such as a translucent lightweight upper and a super-thin rubber outsole. ⁤⁤A proprietary manufacturing process for the Lightstrike Pro foam further enhances its appeal. ⁤⁤However, it has an issue about its cost which is $500, a price higher than the average sport shoes.
 
 
 On the other hand, similar in its target customers, Nike's Vaporfly series, an earlier innovation that in its period revolutionized distance running, have become a subject of interesting discussions. Featuring carbon plates and springy midsole foam, the Vaporfly series has demonstrated a real and substantial advantage, as highlighted by The New York Times analysis. The Zoom Vaporfly 4% and ZoomX Vaporfly Next%, in particular, have set a benchmark, providing runners with a 4 to 5 percent edge over average shoes and a 2 to 3 percent advantage over the next-fastest popular shoe. This notable advantage has not only stirred discussions among professionals and amateurs alike but has also prompted other brands like Brooks, Saucony, New Balance, Hoka One One, and Asics to introduce similar shoes to the market. This historical context sets the stage for analyzing the market dynamics and potential adoption patterns of the Adidas Adizero Adios Pro Evo 1, using some availables statistics of  its Nike counterpart.
 
 ```{r loading data, warning=F}
-df <- read_excel("shoes.xlsx", sheet = "Data")
+df <- read_excel("C:/Users/user/Desktop/MA/Homework-1/shoes.xlsx", sheet = "Data")
 
 ```
 
