@@ -1,0 +1,519 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={MA\_HW1},
+  pdfauthor={Eduard Petrosyan},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{MA\_HW1}
+\author{Eduard Petrosyan}
+\date{2024-02-25}
+
+\begin{document}
+\maketitle
+
+For this analytics, I have chosen to focus on athletic footwear producs;
+more specifically, I have chosen the innovation Adidas Adizero Adios Pro
+Evo 1. Let's briefly introduce this shoe type. It is demonstrating
+cutting-edge technologyy in the realm of distance racing and marathons
+and Ethiopian runner Tigst Assefa's record-breaking performance at the
+Berlin Marathon, clocking 2:11:53, showcased the effectiveness of the
+Evo 1. ⁤⁤Weighing 25 percent less than the Nike Vaporfly and featuring a
+4.9 oz. The Evo 1 introduces innovative features, such as a translucent
+lightweight upper and a super-thin rubber outsole. ⁤⁤A proprietary
+manufacturing process for the Lightstrike Pro foam further enhances its
+appeal. ⁤⁤However it has an issue about its cost which is \$500, a price
+higher than the average sport shoes.
+
+On the other hand, similar in its target customers, Nike's Vaporfly
+series, an earlier innovation that in its period revolutionized distance
+running, have become a subject of interesting discussions. Featuring
+carbon plates and springy midsole foam, the Vaporfly series has
+demonstrated a real and substantial advantage, as highlighted by The New
+York Times analysis. The Zoom Vaporfly 4\% and ZoomX Vaporfly Next\%, in
+particular, have set a benchmark, providing runners with a 4 to 5
+percent edge over average shoes and a 2 to 3 percent advantage over the
+next-fastest popular shoe. This notable advantage has not only stirred
+discussions among professionals and amateurs alike but has also prompted
+other brands like Brooks, Saucony, New Balance, Hoka One One, and Asics
+to introduce similar shoes to the market. This historical context sets
+the stage for analyzing the market dynamics and potential adoption
+patterns of the Adidas Adizero Adios Pro Evo 1, using some availables
+statistics of its Nike counterpart.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"shoes.xlsx"}\NormalTok{, }\AttributeTok{sheet =} \StringTok{"Data"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+At this part of my project, I wanted to approximate the market dynamics
+of Nike's Vaporfly shoes, because of the inherent difficulty in directly
+accessing granular data specific to Vaportfly sales. The dataset that is
+being analyzed represents Nike's worldwide revenue from 2016 to 2021
+within the Running category, which is a pragmatic alternative. When
+taking the narrow part of the data on Running category, where Vaporfly
+shoes are the primary focus, I could understand the insights into their
+market impact and adoption patterns.
+
+I wasn't able to obtain detailed revenue figures at the individual shoe
+model level because of the lack of necessary statistics. To approximate
+it, I turned to the broader dataset by utilizing the revenue withing the
+Running category as a reliable proxy for Vaporfly's market presence. In
+this way, I was able to overcome the limitations in direct data access
+and use the available data to make assumptions about the unavailable
+dataset.
+
+It is important to note, that I used specific source to emphasize, that
+in my assignment, the data that demonstrated Nike's overall revenue
+worldwide, is modified to demonstrate Nike specifically shoe revenue
+using each year's percent share from source.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{running\_df }\OtherTok{\textless{}{-}}\NormalTok{ df[, }\FunctionTok{c}\NormalTok{(}\StringTok{"Year"}\NormalTok{, }\StringTok{"Running"}\NormalTok{)]}
+\NormalTok{percentages }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{61.1}\NormalTok{, }\FloatTok{61.4}\NormalTok{, }\FloatTok{61.2}\NormalTok{, }\FloatTok{66.2}\NormalTok{, }\FloatTok{66.7}\NormalTok{, }\FloatTok{67.4}\NormalTok{)}
+
+\NormalTok{running\_df}\SpecialCharTok{$}\NormalTok{Running }\OtherTok{\textless{}{-}}\NormalTok{ running\_df}\SpecialCharTok{$}\NormalTok{Running }\SpecialCharTok{*}\NormalTok{ (percentages }\SpecialCharTok{/} \DecValTok{100}\NormalTok{)}
+
+\FunctionTok{colnames}\NormalTok{(running\_df) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Year"}\NormalTok{, }\StringTok{"Sales"}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(running\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 2
+##   Year  Sales
+##   <chr> <dbl>
+## 1 2016  2689.
+## 2 2017  2810.
+## 3 2018  2752.
+## 4 2019  2971.
+## 5 2020  2555.
+## 6 2021  2687.
+\end{verbatim}
+
+This is an approximate Nike's revenue from running shoes worldwide from
+2016 to 2021. Now, let's visualize this data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ running\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Sales)) }\SpecialCharTok{+}
+\FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{\textquotesingle{}identity\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+\FunctionTok{ggtitle}\NormalTok{(}\StringTok{\textquotesingle{}Running shoes revenue, mln U.S. dollars\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Marketing_Analytics_HW1_files/figure-latex/unnamed-chunk-2-1.pdf}
+Let's now define the bass model functions.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bass.f }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(t, p, q) \{}
+\NormalTok{  ((p }\SpecialCharTok{+}\NormalTok{ q)}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{/}\NormalTok{ p) }\SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(p }\SpecialCharTok{+}\NormalTok{ q) }\SpecialCharTok{*}\NormalTok{ t) }\SpecialCharTok{/}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ (q }\SpecialCharTok{/}\NormalTok{ p) }\SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(p }\SpecialCharTok{+}\NormalTok{ q) }\SpecialCharTok{*}\NormalTok{ t))}\SpecialCharTok{\^{}}\DecValTok{2}
+\NormalTok{\}}
+
+\NormalTok{bass.F }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(t, p, q) \{}
+\NormalTok{  (}\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(p }\SpecialCharTok{+}\NormalTok{ q) }\SpecialCharTok{*}\NormalTok{ t)) }\SpecialCharTok{/}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ (q }\SpecialCharTok{/}\NormalTok{ p) }\SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(p }\SpecialCharTok{+}\NormalTok{ q) }\SpecialCharTok{*}\NormalTok{ t))}
+\NormalTok{\}}
+
+\NormalTok{time\_ad }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{t =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{14}\NormalTok{)), }\FunctionTok{aes}\NormalTok{(t)) }\SpecialCharTok{+}
+\FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ bass.f, }\AttributeTok{args =} \FunctionTok{c}\NormalTok{(}\AttributeTok{p=}\FloatTok{0.002}\NormalTok{, }\AttributeTok{q=}\FloatTok{0.21}\NormalTok{)) }\SpecialCharTok{+}
+\FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}f(t)\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{sm\_sales }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ running\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Sales)) }\SpecialCharTok{+}
+\FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{\textquotesingle{}identity\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+\FunctionTok{ggtitle}\NormalTok{(}\StringTok{\textquotesingle{}Nike running shoes revenue, mln U.S. dollars\textquotesingle{}}\NormalTok{)}
+
+\FunctionTok{ggarrange}\NormalTok{(time\_ad, sm\_sales)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Marketing_Analytics_HW1_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cum\_ad }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{t =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{15}\NormalTok{)), }\FunctionTok{aes}\NormalTok{(t)) }\SpecialCharTok{+}
+\FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ bass.F, }\AttributeTok{args =} \FunctionTok{c}\NormalTok{(}\AttributeTok{p=}\FloatTok{0.002}\NormalTok{, }\AttributeTok{q=}\FloatTok{0.21}\NormalTok{)) }\SpecialCharTok{+}
+\FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}Nike running shoes cumulative adoptions\textquotesingle{}}\NormalTok{)}
+
+
+\NormalTok{time\_ad }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{t =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{15}\NormalTok{)), }\FunctionTok{aes}\NormalTok{(t)) }\SpecialCharTok{+}
+\FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ bass.f, }\AttributeTok{args =} \FunctionTok{c}\NormalTok{(}\AttributeTok{p=}\FloatTok{0.002}\NormalTok{, }\AttributeTok{q=}\FloatTok{0.21}\NormalTok{)) }\SpecialCharTok{+}
+\FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}Nike running shoes adoptions at time t\textquotesingle{}}\NormalTok{)}
+\FunctionTok{ggarrange}\NormalTok{(cum\_ad, time\_ad)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Marketing_Analytics_HW1_files/figure-latex/unnamed-chunk-4-1.pdf}
+Starting parameters for innovation (p) and imitation (q) coefficients do
+not result in accurately depiction of what our sales distribution look
+like, so we move on to estimation of the parameters. We will try the
+estimation via 2 methods and try to identify the best from them.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  We will use nls() - Non-linear Least Squares for first approach.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sales }\OtherTok{=}\NormalTok{ running\_df}\SpecialCharTok{$}\NormalTok{Sales}
+\NormalTok{t }\OtherTok{=} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(sales)}
+\NormalTok{bass\_m }\OtherTok{=} \FunctionTok{nls}\NormalTok{(sales }\SpecialCharTok{\textasciitilde{}}\NormalTok{ m}\SpecialCharTok{*}\NormalTok{(((p}\SpecialCharTok{+}\NormalTok{q)}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{/}\NormalTok{p)}\SpecialCharTok{*}\FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(p}\SpecialCharTok{+}\NormalTok{q)}\SpecialCharTok{*}\NormalTok{t))}\SpecialCharTok{/}
+\NormalTok{(}\DecValTok{1}\SpecialCharTok{+}\NormalTok{(q}\SpecialCharTok{/}\NormalTok{p)}\SpecialCharTok{*}\FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(p}\SpecialCharTok{+}\NormalTok{q)}\SpecialCharTok{*}\NormalTok{t))}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{,}
+\AttributeTok{start=}\FunctionTok{c}\NormalTok{(}\FunctionTok{list}\NormalTok{(}\AttributeTok{m=}\FunctionTok{sum}\NormalTok{(sales),}\AttributeTok{p=}\FloatTok{0.02}\NormalTok{,}\AttributeTok{q=}\FloatTok{0.4}\NormalTok{)))}
+
+\FunctionTok{summary}\NormalTok{(bass\_m)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Formula: sales ~ m * (((p + q)^2/p) * exp(-(p + q) * t))/(1 + (q/p) * 
+##     exp(-(p + q) * t))^2
+## 
+## Parameters:
+##    Estimate Std. Error t value Pr(>|t|)  
+## m 3.794e+04  1.350e+04   2.811   0.0673 .
+## p 6.782e-02  1.919e-02   3.533   0.0386 *
+## q 1.250e-01  7.995e-02   1.563   0.2160  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 153.4 on 3 degrees of freedom
+## 
+## Number of iterations to convergence: 7 
+## Achieved convergence tolerance: 3.474e-07
+\end{verbatim}
+
+The summary demonstrates, that the potential market size (m) is
+estimated at approximately 37,940, indicating the anticipated number of
+adopters. The coefficients for innovators (p) and imitators (q) are
+estimated at 0.068 and 0.125. Innovation rate is approximately two times
+less than imitation rate, which indicates that the rate at which new
+adopters independently embrace the innovation (p) is roughly half the
+rate at which individuals imitate others in their decision to adopt (q).
+The model's fit to the data is reflected in the residual standard error
+of 153.4.
+
+Now, let's visualize with those parameters.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{time\_ad }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{t =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{)), }\FunctionTok{aes}\NormalTok{(t)) }\SpecialCharTok{+}
+\FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ bass.f, }\AttributeTok{args =} \FunctionTok{c}\NormalTok{(}\AttributeTok{p=}\FloatTok{0.005}\NormalTok{, }\AttributeTok{q=}\FloatTok{0.369}\NormalTok{)) }\SpecialCharTok{+}
+\FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}f(t)\textquotesingle{}}\NormalTok{)}
+
+\FunctionTok{ggarrange}\NormalTok{(time\_ad, sm\_sales)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Marketing_Analytics_HW1_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{running\_df}\SpecialCharTok{$}\NormalTok{pred\_sales }\OtherTok{=} \FunctionTok{bass.f}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\AttributeTok{p =} \FloatTok{0.068}\NormalTok{, }\AttributeTok{q =} \FloatTok{0.125}\NormalTok{)}\SpecialCharTok{*}\DecValTok{37940}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ running\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Sales)) }\SpecialCharTok{+}
+\FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{\textquotesingle{}identity\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+\FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Year, }\AttributeTok{y=}\NormalTok{pred\_sales), }\AttributeTok{color =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Marketing_Analytics_HW1_files/figure-latex/unnamed-chunk-7-1.pdf}
+The red dots demonstrate our estimation for corresponding years, which
+are pretty accurate and close to actual values. Now, let's try other
+approach for parameter estimation using diffusion library.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{diff\_m }\OtherTok{=} \FunctionTok{diffusion}\NormalTok{(sales)}
+\NormalTok{p}\OtherTok{=}\FunctionTok{round}\NormalTok{(diff\_m}\SpecialCharTok{$}\NormalTok{w,}\DecValTok{4}\NormalTok{)[}\DecValTok{1}\NormalTok{]}
+\NormalTok{q}\OtherTok{=}\FunctionTok{round}\NormalTok{(diff\_m}\SpecialCharTok{$}\NormalTok{w,}\DecValTok{4}\NormalTok{)[}\DecValTok{2}\NormalTok{]}
+\NormalTok{m}\OtherTok{=}\FunctionTok{round}\NormalTok{(diff\_m}\SpecialCharTok{$}\NormalTok{w,}\DecValTok{4}\NormalTok{)[}\DecValTok{3}\NormalTok{]}
+\NormalTok{diff\_m}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## bass model
+## 
+## Parameters:
+##                                 Estimate p-value
+## p - Coefficient of innovation     0.0763      NA
+## q - Coefficient of imitation      0.1328      NA
+## m - Market potential          34435.3336      NA
+## 
+## sigma: 109.2018
+\end{verbatim}
+
+For this approach, we see, that summary demonstrates, the potential
+market size (m) is estimated at approximately 34435, indicating the
+anticipated number of adopters. The coefficients for innovators (p) and
+imitators (q) are close in values to previous approach estimations,
+0.076 and 0.133. The model's fit to the data is reflected in the
+residual standard error of 109.2018, which is less than previous
+approach's sigma, which implies, that this method may more accurately
+fit to our sales distribution.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{time\_ad }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{t =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{)), }\FunctionTok{aes}\NormalTok{(t)) }\SpecialCharTok{+}
+\FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ bass.f, }\AttributeTok{args =} \FunctionTok{c}\NormalTok{(p, q)) }\SpecialCharTok{+}
+\FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}f(t)\textquotesingle{}}\NormalTok{)}
+
+\FunctionTok{ggarrange}\NormalTok{(time\_ad, sm\_sales)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Marketing_Analytics_HW1_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{running\_df}\SpecialCharTok{$}\NormalTok{pred\_sales }\OtherTok{=} \FunctionTok{bass.f}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, p , q )}\SpecialCharTok{*}\NormalTok{m}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ running\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Sales)) }\SpecialCharTok{+}
+\FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{\textquotesingle{}identity\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+\FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Year, }\AttributeTok{y=}\NormalTok{pred\_sales), }\AttributeTok{color =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Marketing_Analytics_HW1_files/figure-latex/unnamed-chunk-10-1.pdf}
+From visualizations we also see, that the predictions in average are
+more fitted to actual sales. Due to points above, let's continue our
+work with last approach's resulted parameters.
+
+From research, I found out, that Nike actually dominates the global
+sneaker market with a 65.9\% market share, while Adidas has a 14.7\%
+market share. So we will change the market (m) for making predictions of
+the diffusion of the innovation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{M }\OtherTok{=} \FloatTok{14.7}\SpecialCharTok{/}\FloatTok{65.9} \SpecialCharTok{*}\NormalTok{ m}
+
+\NormalTok{bass\_f }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(t, p, q, M) \{}
+\NormalTok{  ((p }\SpecialCharTok{+}\NormalTok{ q)}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{/}\NormalTok{ p) }\SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(p }\SpecialCharTok{+}\NormalTok{ q) }\SpecialCharTok{*}\NormalTok{ t) }\SpecialCharTok{/}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ (q }\SpecialCharTok{/}\NormalTok{ p) }\SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(p }\SpecialCharTok{+}\NormalTok{ q) }\SpecialCharTok{*}\NormalTok{ t))}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ M}
+\NormalTok{\}}
+
+\NormalTok{bass\_F }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(t, p, q, M) \{}
+\NormalTok{  (}\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(p }\SpecialCharTok{+}\NormalTok{ q) }\SpecialCharTok{*}\NormalTok{ t)) }\SpecialCharTok{/}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ (q }\SpecialCharTok{/}\NormalTok{ p) }\SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(p }\SpecialCharTok{+}\NormalTok{ q) }\SpecialCharTok{*}\NormalTok{ t)) }\SpecialCharTok{*}\NormalTok{ M}
+\NormalTok{\}}
+
+\NormalTok{time\_values }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{15}\NormalTok{, }\AttributeTok{by =} \FloatTok{0.1}\NormalTok{)}
+
+\NormalTok{f\_values }\OtherTok{\textless{}{-}} \FunctionTok{bass\_f}\NormalTok{(time\_values, p, q, M)}
+\NormalTok{F\_values }\OtherTok{\textless{}{-}} \FunctionTok{bass\_F}\NormalTok{(time\_values, p, q, M)}
+
+\NormalTok{data\_f }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{time =}\NormalTok{ time\_values, }\AttributeTok{f =}\NormalTok{ f\_values)}
+\NormalTok{data\_F }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{time =}\NormalTok{ time\_values, }\AttributeTok{F =}\NormalTok{ F\_values)}
+
+\NormalTok{plot\_f }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(data\_f, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ time, }\AttributeTok{y =}\NormalTok{ f)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Revenue over Time"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Time"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Revenue (U.S. mln dollars"}\NormalTok{)}
+
+\NormalTok{plot\_F }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(data\_F, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ time, }\AttributeTok{y =}\NormalTok{ F)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Cumulative Revenue   over Time"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Time"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Cumulative Revenue (U.S. mln dollars)"}\NormalTok{)}
+
+\FunctionTok{ggarrange}\NormalTok{(plot\_f, plot\_F)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Marketing_Analytics_HW1_files/figure-latex/unnamed-chunk-11-1.pdf}
+Here, we can observe the probable diffusion of the innovation shoes of
+Adidas. Through first graph, we can observe, that the starting revenue
+will be already high and after 2-3 years will reach its peak, and shrink
+over time.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{running\_df}\SpecialCharTok{$}\NormalTok{pred\_Year }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{2024}\NormalTok{, }\DecValTok{2029}\NormalTok{)}
+
+\NormalTok{running\_df}\SpecialCharTok{$}\NormalTok{pred\_sales }\OtherTok{\textless{}{-}} \FunctionTok{bass.f}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, p, q) }\SpecialCharTok{*}\NormalTok{ M}
+
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ running\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Sales)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{\textquotesingle{}identity\textquotesingle{}}\NormalTok{, }\AttributeTok{fill =} \StringTok{\textquotesingle{}gray\textquotesingle{}}\NormalTok{, }\AttributeTok{color =} \StringTok{\textquotesingle{}black\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ pred\_sales), }\AttributeTok{color =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}Comparison of Sales: Nike vs Adidas\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{\textquotesingle{}Year\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}Sales\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{caption =} \StringTok{\textquotesingle{}Red points represent predicted values for Adidas Adizero shoes\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }\AttributeTok{x =}\NormalTok{ running\_df}\SpecialCharTok{$}\NormalTok{Year, }\AttributeTok{y =} \FunctionTok{rep}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1000}\NormalTok{, }\FunctionTok{nrow}\NormalTok{(running\_df)),}
+           \AttributeTok{label =}\NormalTok{ running\_df}\SpecialCharTok{$}\NormalTok{pred\_Year, }\AttributeTok{color =} \StringTok{"red"}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{, }\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Marketing_Analytics_HW1_files/figure-latex/unnamed-chunk-12-1.pdf}
+Through this graph, we can see, how different are revenue values after
+start of production of Adidas shoes (red points) and Nike shoes (gray
+bars). The start of production of Nike Vaporfly was in 2016, so the
+above graph is useful in its interpretation, as we find also how the
+revenues could be for Adidas Adizero shoes for same period, as we have
+statistics about Adidas. Our estimated market potential for Adidas
+Adizero shoes is 7681 mln U.S. dollars.
+
+For final part, we will try to estimate the potential market share of
+our product. From research, I found out, that in 2020, Adidas, in the
+global athletic footwear market accounted for a 15.1\% market share.
+Also, Adidas has a 14.7\% market share in global sneaker market. So, we
+can say that approximately 15\% of market share is reached by Adidas.
+From other source, I found , that The Athletic Footwear Market size is
+estimated at USD 116.82 billion in 2024, and is expected to reach USD
+146.48 billion by 2029. Hence, approximately, in the start, the product
+will have potential market 116.82* 15.1/100 = 17.64 billion U.S. dollars
+for 2024 period and for 2029 period it will be calculated in same way
+approximately 22.12 billion U.S. dollars. If we assume, that for the
+next 5 years, no structural breaks will occur, and the trend will be
+linear, we can say, that each year from 2024 the market share will be
+increased by (22.12 - 17.64)/5 = 0.9 billion dollars
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{innovators\_percentage }\OtherTok{\textless{}{-}} \FloatTok{0.025}
+\NormalTok{early\_adopters\_percentage }\OtherTok{\textless{}{-}} \FloatTok{0.135}
+\NormalTok{early\_majority\_percentage }\OtherTok{\textless{}{-}} \FloatTok{0.34}
+\NormalTok{late\_majority\_percentage }\OtherTok{\textless{}{-}} \FloatTok{0.34}
+\NormalTok{laggards\_percentage }\OtherTok{\textless{}{-}} \FloatTok{0.16}
+
+\CommentTok{\#Estimated Market share for 2024}
+\NormalTok{m }\OtherTok{\textless{}{-}} \FloatTok{17.64}
+
+\NormalTok{innovators\_share }\OtherTok{\textless{}{-}}\NormalTok{ m }\SpecialCharTok{*}\NormalTok{ innovators\_percentage}
+\NormalTok{early\_adopters\_share }\OtherTok{\textless{}{-}}\NormalTok{ m }\SpecialCharTok{*}\NormalTok{ early\_adopters\_percentage}
+\NormalTok{early\_majority\_share }\OtherTok{\textless{}{-}}\NormalTok{ m }\SpecialCharTok{*}\NormalTok{ early\_majority\_percentage}
+\NormalTok{late\_majority\_share }\OtherTok{\textless{}{-}}\NormalTok{ m }\SpecialCharTok{*}\NormalTok{ late\_majority\_percentage}
+\NormalTok{laggards\_share }\OtherTok{\textless{}{-}}\NormalTok{ m }\SpecialCharTok{*}\NormalTok{ laggards\_percentage}
+
+\NormalTok{result\_df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{Innovators\_Share =}\NormalTok{ innovators\_share,}
+  \AttributeTok{Early\_Adopters\_Share =}\NormalTok{ early\_adopters\_share,}
+  \AttributeTok{Early\_Majority\_Share =}\NormalTok{ early\_majority\_share,}
+  \AttributeTok{Late\_Majority\_Share =}\NormalTok{ late\_majority\_share,}
+  \AttributeTok{Laggards\_Share =}\NormalTok{ laggards\_share}
+\NormalTok{)}
+
+\CommentTok{\#Market shares in billions for each category}
+\FunctionTok{print}\NormalTok{(result\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Innovators_Share Early_Adopters_Share Early_Majority_Share
+## 1            0.441               2.3814               5.9976
+##   Late_Majority_Share Laggards_Share
+## 1              5.9976         2.8224
+\end{verbatim}
+
+Sources:
+\url{https://time.com/collection/best-inventions-2023/6324416/adidas-adizero-adios-pro-evo-1/}
+\url{https://www.statista.com/statistics/240975/athletic-footwwear-wholesale-sales-in-the-us/}
+\url{https://www.nytimes.com/interactive/2019/12/13/upshot/nike-vaporfly-next-percent-shoe-estimates.html}
+\url{https://runrepeat.com/nike-shoes-statistics}
+\url{https://gitnux.org/nike-vs-adidas-statistics/\#}:\textasciitilde:text=Nike's\%20global\%20brand\%20value\%20in,has\%20a\%2014.7\%25\%20market\%20share.
+\url{https://www.mordorintelligence.com/industry-reports/athletic-footwear-market}
+
+\end{document}

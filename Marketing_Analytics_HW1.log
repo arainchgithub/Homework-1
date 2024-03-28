@@ -1,0 +1,27 @@
+This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.9) (format=lualatex 2024.2.29)  29 FEB 2024 05:55
+ restricted system commands enabled.
+**Marketing_Analytics_HW1.tex
+(./Marketing_Analytics_HW1.tex
+LaTeX2e <2023-06-01> patch level 1
+L3 programming layer <2023-08-29>
+Lua module: luaotfload 2023-08-31 3.26 Lua based OpenType font support
+Lua module: lualibs 2023-07-13 2.76 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2023-07-13 2.76 ConTeXt Lua libraries -- extended c
+ollection.
+luaotfload | conf : Root cache directory is "C:/Users/user/AppData/Local/MiKTeX/
+luatex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2023-08-19.lua" from kpse-res
+olved path "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/luatex/luaotfload/fo
+ntloader-2023-08-19.lua".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.133
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' in `define_font'.
+
+! Sorry, but C:\Users\user\AppData\Local\Programs\MiKTeX\miktex\bin\x64\lualatex.exe did not succeed.
+
+! The log file hopefully contains the information to get MiKTeX going again:
+
+!   C:\Users\user\AppData\Local\MiKTeX\miktex\log\lualatex.log
